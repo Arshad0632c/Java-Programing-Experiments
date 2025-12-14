@@ -1,0 +1,77 @@
+5. Implement the following Invoice Item class in Java according to the given
+UML class diagram:
+
+package Basics;
+
+public class InvoiceItem {
+
+	private String id;
+	private String desc;
+	private int qty;
+	private double unitPrice;
+
+	//Constructor
+	public InvoiceItem(String id,String desc,int qty,double unitPrice)
+	{
+		this.id=id;
+		this.desc=desc;
+		this.qty=qty;
+		this.unitPrice=unitPrice;
+	}
+	public String getId()
+	{
+		return this.id;
+	}
+	public String getDesc()
+	{
+		return this.desc;
+	}
+	public int getqty()
+	{
+		return this.qty;
+	}
+	public double getunitPrice()
+	{
+		return this.unitPrice;
+	}
+	public void setqty(int qty)
+	{
+		this.qty=qty;
+	}
+	public void setunitPrice(double unitPrice)
+	{
+		this.unitPrice=unitPrice;
+	}
+	public double getTotal()
+	{
+		return this.unitPrice*this.qty;
+	}
+	public String toString()
+	{
+		  return "InvoiceItem[id=" + this.id + ", desc=" + this.desc + ", qty=" + this.qty + ", unitPrice=" + this.unitPrice + "]";
+	}
+	
+}
+
+//Accessing class
+package Basics;
+
+public class MainInvoiceItem {
+	public static void main(String[] args) {
+		InvoiceItem a=new InvoiceItem("L09p","java book",2,200.50);
+		System.out.println("Book id = "+a.getId());
+		System.out.println(a.getDesc());
+		System.out.println("Quantity"+a.getqty());
+		System.out.println("Price of single book = "+a.getunitPrice());
+		System.out.println("Total is = "+a.getTotal());
+	}
+
+}
+
+OUTPUT:
+
+Book id = L09p
+java book
+Quantity2
+Price of single book = 200.5
+Total is = 401.0
